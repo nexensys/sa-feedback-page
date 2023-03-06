@@ -24,7 +24,7 @@ Create a file `server/admins.secret.json`, a json array containing the usernames
 ["World_Languages", "ErrorGamer2000"]
 ```
 
-and run `npm run build`.
+Run `npm install` then run `npm run build`.
 
 To start, simply run `npm start`.
 
