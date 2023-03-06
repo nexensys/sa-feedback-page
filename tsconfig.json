@@ -31,5 +31,5 @@
     "pages/**/*.tsx",
     "redux/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "server"]
 }
