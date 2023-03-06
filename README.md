@@ -7,13 +7,21 @@ CREATE USER '<username>'@'127.0.0.1' IDENTIFIED BY '<password>';
 GRANT ALL ON upvotr.* TO '<username>'@'127.0.0.1';
 ```
 
-Replace `server/mysql-login.secret.json` with:
+Create a file `server/mysql-login.secret.json` with:
 
 ```json
 {
   "user": "<username>",
   "password": "<password>"
 }
+```
+
+## Admins
+
+Create a file `server/admins.secret.json`, a json array containing the usernames of users who should be marked as admin by default. Ex:
+
+```json
+["World_Languages", "ErrorGamer2000"]
 ```
 
 and run `npm run build`.
