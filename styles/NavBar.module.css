@@ -1,0 +1,92 @@
+.container {
+  height: 3rem;
+  background-color: rgb(var(--accent-rgb));
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+  z-index: 100;
+  color: white;
+  position: fixed;
+}
+
+.wrapper {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.iconlink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 0;
+}
+
+.iconlink > p {
+  flex-shrink: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: none;
+}
+
+@media only screen and (min-width: 900px) {
+  .iconlink > p {
+    display: block;
+  }
+}
+
+.icon {
+  height: 2.5rem;
+  margin: 0.25rem;
+}
+
+.accountwrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.accountcenter {
+  align-self: end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.createpost {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.createpost > svg {
+  flex-shrink: 0;
+}
+
+.createpost {
+  flex-shrink: 0;
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.createpost:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.seperator {
+  background-color: white;
+  width: 2px;
+  height: 2rem;
+  position: relative;
+  border-radius: 1px;
+  margin: 0.5rem;
+}

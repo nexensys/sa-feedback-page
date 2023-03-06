@@ -1,0 +1,27 @@
+.postscontainer {
+  max-width: var(--max-width);
+  margin: auto;
+  padding-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 2rem);
+  gap: 1rem;
+}
+
+.postscontent {
+  flex-grow: 1;
+  position: relative;
+  margin: 0.25rem;
+  margin-block: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 900px) {
+  .postscontainer {
+    flex-direction: row !important;
+  }
+  .postscontent {
+    margin: 0 !important;
+  }
+}

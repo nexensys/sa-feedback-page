@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /sessions
+User-agent: *
+Disallow: /postapi
+User-agent: *
+Disallow: /admin
+User-agent: *
+Disallow: /mod
+
+User-agent: *
+Allow: /

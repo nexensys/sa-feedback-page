@@ -1,0 +1,65 @@
+.editorwrapper {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.editortabs {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: -2px;
+  padding: 0.5rem;
+  padding-block: 0;
+}
+
+.tab {
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  background-color: hsl(var(--background-hs), 100%);
+  border: 2px solid hsl(var(--background-hs), 80%);
+  min-width: 5rem;
+  border-radius: 0;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
+}
+
+.tab[aria-selected="true"] {
+  border-bottom-color: white;
+}
+
+.tab[aria-selected="false"] {
+  margin: -0.5rem;
+  margin-block: 0rem;
+  z-index: 0;
+  background-color: hsl(var(--background-hs), 95%);
+}
+
+.tab:first-child {
+  margin-left: 0rem !important;
+}
+
+.editor {
+  padding: 1rem;
+  border: 2px solid hsl(var(--background-hs), 80%);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.editortextarea {
+  padding: 0.5rem;
+  border: 2px solid hsl(var(--background-hs), 90%);
+  border-radius: 0.25rem;
+  background-color: transparent;
+  resize: vertical;
+  color: black;
+  height: 100%;
+  font-family: inherit;
+  overflow-y: auto;
+  flex-grow: 1;
+}

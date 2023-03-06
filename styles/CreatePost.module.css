@@ -1,0 +1,139 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  gap: 0.5rem;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.posttitle {
+  background-color: hsl(var(--background-hs), 100%);
+  border: 2px solid hsl(var(--background-hs), 80%);
+  padding: 0.5rem;
+  color: black;
+  border-radius: 0.5rem;
+}
+
+.typeselect {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.typeselect > div {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: hsl(var(--background-hs), 100%);
+  color: black;
+  cursor: pointer;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.typeselect > div[aria-checked="true"] {
+  background-color: rgb(var(--accent-rgb));
+  color: white;
+}
+
+.typeselect > div > svg {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.typeselect > div > p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.editor {
+  background-color: hsl(var(--background-hs), 100%);
+  border-radius: 0.5rem;
+  flex-grow: 1;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+}
+
+.button {
+  padding: 0.5rem;
+  background-color: hsl(var(--background-hs), 100%);
+  border-radius: 0.5rem;
+  border-style: none;
+  align-self: flex-start;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.button[type="submit"] {
+  background-color: rgb(var(--accent-rgb));
+  color: white;
+}
+
+.modalcontainer {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 1rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.modalloader {
+  animation: spin 1s linear infinite;
+  height: 1.5rem;
+  width: 1.5rem;
+  opacity: 0.5;
+}
+
+.guidelines {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #fada222d;
+  border: 2px solid #fddd2b80;
+  margin: 0.5rem;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.guidelines > a {
+  text-decoration: underline;
+  color: rgb(var(--accent-rgb));
+}
+
+.guidelines > svg {
+  font-size: 1.5rem;
+  margin-right: 0.25rem;
+  color: #fbd13a;
+}

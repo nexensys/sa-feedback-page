@@ -1,0 +1,90 @@
+.pickercontainer {
+  position: relative;
+  padding: 0.25rem;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.pickerbutton {
+  color: white;
+  background-color: rgb(var(--accent-rgb));
+  min-width: 0;
+  line-height: 0;
+  padding: 0.25rem;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.floatingpicker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0rem 0.25rem rgba(0, 0, 0, 0.1);
+  border: 1px solid hsl(var(--background-hs), 90%);
+  align-items: center;
+  right: 0;
+}
+
+.floatingpicker[data-open="false"] {
+  display: none;
+}
+
+.emojibutton {
+  cursor: pointer;
+  line-height: 0;
+}
+
+.emojiform {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.selectcustomtitle {
+  border-bottom: 2px solid hsl(var(--background-hs), 90%);
+  padding-bottom: 0.25rem;
+}
+
+.selectbuttons {
+  display: grid;
+  align-self: stretch;
+  place-items: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.emojiinput {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: hsl(var(--background-hs), 95%);
+  border: 2px solid hsl(var(--background-hs), 80%);
+  color: black;
+}
+
+.cancelbutton,
+.selectbutton {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.cancelbutton {
+  background-color: hsl(var(--background-hs), 95%);
+  border: 2px solid hsl(var(--background-hs), 80%);
+  color: black;
+}
+.selectbutton {
+  background-color: rgb(var(--accent-rgb));
+  border: 2px solid rgb(var(--accent-rgb));
+  color: white;
+}

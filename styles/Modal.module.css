@@ -1,0 +1,24 @@
+.modalwrapper {
+  display: grid;
+  grid-template-columns: 1;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.modalcontent {
+  display: flex;
+  padding: 1rem;
+  user-select: none;
+  background-color: hsl(var(--background-hs), 100%);
+  border-radius: 0.5rem;
+  flex-direction: column;
+  color: black;
+  gap: 0.5rem;
+  min-width: 0;
+}

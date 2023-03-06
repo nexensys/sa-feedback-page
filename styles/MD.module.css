@@ -1,0 +1,184 @@
+.text {
+}
+.paragraph {
+  padding-block: 0.5rem;
+}
+.heading {
+}
+
+.thematicbreak {
+}
+h1.heading,
+.thematicbreak {
+  border-bottom: 3px solid hsl(var(--background-hs), 90%);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.blockquote {
+  padding-left: 1rem;
+  border-left: 3px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.65);
+}
+.list {
+  padding-inline-start: 1.5rem;
+}
+.listitem {
+}
+.listitemwithcheck {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: -1.5rem;
+}
+.listitemwithcheck > * {
+  min-width: 0;
+}
+.listitemwithcheck > input {
+  appearance: none;
+  background-color: hsl(var(--background-hs), 98%);
+  height: calc(0.8rem + 4px);
+  width: calc(0.8rem + 4px);
+  border-radius: 0.25rem;
+  position: relative;
+}
+.listitemwithcheck > input::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 0.25rem;
+  border: 2px solid hsl(var(--background-hs), 90%);
+}
+.listitemwithcheck > input:checked::before {
+  background-color: rgb(var(--accent-rgb));
+  border-color: rgb(var(--accent-rgb));
+}
+.listitemwithcheck > input:checked::after {
+  content: "";
+  height: 0.5rem;
+  width: 0.2rem;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateY(-2px) rotate(45deg);
+}
+.html {
+  padding-block: 0.5rem;
+}
+.html details {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+.html details summary {
+  color: rgb(var(--accent-rgb));
+  margin: -0.5rem;
+  padding: 0.5rem;
+  background-color: hsl(var(--background-hs), 98%);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  user-select: none;
+  font-weight: 600;
+}
+.html details[open] summary {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+.code {
+}
+.emphasis {
+}
+.strong {
+}
+.inlinecode {
+  background-color: hsl(var(--background-hs), 90%);
+  padding: 0.25rem;
+  padding-block: 0.1rem;
+  border-radius: 0.25rem;
+}
+.link {
+  color: rgb(var(--accent-rgb));
+  text-decoration: underline;
+}
+.image {
+  position: relative;
+  max-width: 100%;
+}
+.footnotereference {
+  color: rgb(var(--accent-rgb));
+  text-decoration: underline;
+}
+.footnotes {
+  padding-inline-start: 1.5rem;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid hsl(var(--background-hs), 90%);
+  font-size: 0.8rem;
+}
+.footnotecontent {
+  border-radius: 0.25rem;
+}
+.root table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.root table > tbody > tr > td,
+.root table > thead > tr > th {
+  border: 1px solid hsl(var(--background-hs), 70%);
+  padding: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.root table > thead > tr {
+  color: rgba(var(--accent-rgb));
+  /*background-color: hsl(var(--background-hs), 95%);*/
+}
+.root table > tbody > tr > td:not(:last-child),
+.root table > thead > tr > th:not(:last-child) {
+  border-right-width: 0;
+}
+.root table > tbody > tr:not(:first-child) > td {
+  border-top-width: 0;
+}
+.root table > tbody > tr:nth-child(2n - 1) {
+  background-color: hsl(var(--background-hs), 98%);
+}
+.root table > thead > tr > th:first-child {
+  border-top-left-radius: 0.25rem;
+}
+.root table > thead > tr > th:last-child {
+  border-top-right-radius: 0.25rem;
+}
+.root table > tbody > tr:last-child > td:first-child {
+  border-bottom-left-radius: 0.25rem;
+}
+.root table > tbody > tr:last-child > td:last-child {
+  border-bottom-right-radius: 0.25rem;
+}
+.table {
+}
+.delete {
+}
+
+@keyframes pulse {
+  from {
+    background-color: rgba(var(--accent-rgb), 0.25);
+  }
+  to {
+    background-color: rgba(var(--accent-rgb), 0);
+  }
+}
+.footnotecontent:target {
+  animation: 1s pulse linear;
+}
+.root {
+  user-select: contain;
+}

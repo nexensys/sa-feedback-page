@@ -1,0 +1,131 @@
+.container {
+  display: grid;
+  opacity: 1;
+  position: relative;
+}
+
+.container > * {
+  min-width: 0;
+}
+
+.selected {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: hsl(var(--background-hs), 95%);
+  border: 2px solid hsl(var(--background-hs), 80%);
+  color: black;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem;
+}
+
+.selected::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: hsl(var(--background-hs), 80%);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  place-self: center;
+}
+
+.selected[data-open="true"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.selected[data-open="true"]::after {
+  transform: rotate(180deg);
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.menucontainer {
+  position: relative;
+  min-width: 100%;
+  margin-bottom: -100%;
+  z-index: 1;
+  height: 0;
+}
+
+.menu {
+  background-color: hsl(var(--background-hs), 100%);
+  border: 2px solid hsl(var(--background-hs), 80%);
+  border-top-width: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu > * {
+  min-width: 0;
+}
+
+.menuitem {
+  padding: 0.5rem;
+  padding-right: 1.55rem;
+  border-radius: 0.25rem;
+}
+
+.menuitem:hover {
+  background-color: hsl(var(--background-hs), 95%);
+  cursor: pointer;
+}
+
+.scrollarea {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  flex-grow: 1;
+  gap: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.scrollarea > * {
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.searchbar {
+  padding: 0.5rem;
+  align-self: stretch;
+  background-color: hsl(var(--background-hs), 100%);
+  border: 0px solid transparent;
+  border: 2px solid hsl(var(--background-hs), 80%);
+  border-top-width: 0;
+  width: calc(100% - 1rem);
+  margin: -1px;
+  position: relative;
+  margin-block: 0;
+  color: black;
+
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.menuitem[data-selected="true"] {
+  background-color: rgb(var(--accent-rgb)) !important;
+  color: white !important;
+}
+
+.selecteditems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  max-width: 15rem;
+}

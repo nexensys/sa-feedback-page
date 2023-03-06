@@ -1,0 +1,28 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  place-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  background-color: hsl(var(--background-hs), 100%);
+  border-radius: 0.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.code {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.text {
+  opacity: 0.5;
+}
