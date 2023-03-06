@@ -6,6 +6,7 @@ import HMRRuntime, { ExportType, HotModule } from "@upvotr/node-hmr";
 import { NextServer } from "next/dist/server/next";
 import { Server } from "http";
 import { ContentWatcher } from "./contentWatcher";
+import port from "./port.json";
 
 const moduleDef: HotModule<
   {
@@ -25,7 +26,6 @@ const moduleDef: HotModule<
 
     const app = next({ dev, customServer: true, quiet: true });
     const handle = app.getRequestHandler();
-    const port = process.env.PORT || 3000;
     await app.prepare();
     reconnect();
     await setup();
