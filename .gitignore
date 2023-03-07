@@ -35,5 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Secrets
+# App-specific
 *.secret.json
+dist/
