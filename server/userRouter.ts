@@ -1,4 +1,5 @@
 import { Router, json } from "express";
+import "express-session"; //? Types aren't loaded without it??
 import { URL } from "url";
 import { IUserData, db } from "./mysql";
 import { RowDataPacket } from "mysql2";
@@ -7,15 +8,6 @@ import { appSession } from "./session";
 import HMRRuntime, { ExportType, HotModule } from "@upvotr/node-hmr";
 import { ContentWatcher } from "./contentWatcher";
 import admins from "./admins.secret.json";
-
-declare module "express-session" {
-  interface SessionData {
-    loggedIn: boolean;
-    userId: string;
-    admin: boolean;
-    moderator: boolean;
-  }
-}
 
 const moduleDef: HotModule<{ runtime: HMRRuntime }, Router> = {
   getPersistentValues() {

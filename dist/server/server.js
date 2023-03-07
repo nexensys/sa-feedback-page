@@ -9,13 +9,13 @@ const mysql_1 = require("./mysql");
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const node_hmr_1 = __importDefault(require("@upvotr/node-hmr"));
 const contentWatcher_1 = require("./contentWatcher");
+const port_json_1 = __importDefault(require("./port.json"));
 const moduleDef = {
     async getPersistentValues() {
         const dev = process.env.NODE_ENV !== "production";
         const runtime = new node_hmr_1.default(dev && new contentWatcher_1.ContentWatcher(require), require);
         const app = (0, next_1.default)({ dev, customServer: true, quiet: true });
         const handle = app.getRequestHandler();
-        const port = process.env.PORT || 3000;
         await app.prepare();
         (0, mysql_1.reconnect)();
         await (0, mysql_1.setup)();
@@ -36,16 +36,16 @@ const moduleDef = {
         server.all("*", (req, res) => {
             return handle(req, res);
         });
-        const httpServer = server.listen(port, (err) => {
+        const httpServer = server.listen(port_json_1.default, (err) => {
             if (err)
                 throw err;
-            console.log(`> Ready on http://localhost:${port} - env ${process.env.NODE_ENV}`);
+            console.log(`> Ready on http://localhost:${port_json_1.default} - env ${process.env.NODE_ENV}`);
         });
         return {
             app,
             server,
             dev,
-            port,
+            port: port_json_1.default,
             db: mysql_1.db,
             httpServer,
             runtime

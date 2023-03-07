@@ -6,6 +6,6 @@
     "noEmit": false,
     "sourceMap": true
   },
-  "include": ["server"],
+  "include": ["server/*.ts", "server/*.d.ts"],
   "exclude": ["node_modules"]
 }

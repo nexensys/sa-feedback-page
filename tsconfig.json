@@ -22,14 +22,6 @@
     },
     "sourceMap": true
   },
-  "include": [
-    "next-env.d.ts",
-    "app-env.d.ts",
-    "common/**/*.ts",
-    "components/**/*.tsx",
-    "pages/**/*.ts",
-    "pages/**/*.tsx",
-    "redux/**/*.ts"
-  ],
+  "include": ["next-env.d.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "server"]
 }

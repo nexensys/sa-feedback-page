@@ -1,7 +1,4 @@
-declare module "*.md" {
-  const content: string;
-  export default content;
-}
+import "express-session";
 
 declare module "express-session" {
   interface SessionData {
