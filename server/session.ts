@@ -17,7 +17,7 @@ export const appSession = session({
   },
   name: "session",
   rolling: true,
-  saveUninitialized: true,
+  saveUninitialized: false,
   resave: true,
   store: sessionStore
 });
