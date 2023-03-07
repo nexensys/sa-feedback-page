@@ -7,6 +7,8 @@ CREATE USER '<username>'@'127.0.0.1' IDENTIFIED BY '<password>';
 GRANT ALL ON upvotr.* TO '<username>'@'127.0.0.1';
 ```
 
+Create an environment variable named `SECRET` with a randomized secret for cookie signing.
+
 Create a file `server/mysql-login.secret.json` with:
 
 ```json
