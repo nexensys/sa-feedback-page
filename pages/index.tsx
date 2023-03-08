@@ -45,7 +45,9 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     : null;
   if (!sessionId)
     return {
-      notFound: true
+      props: {
+        welcomeMessage
+      }
     };
 
   await sspLoadDB();
