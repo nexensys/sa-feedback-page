@@ -11,8 +11,8 @@ let dbPromise = mysql.createConnection({
   ...login,
   multipleStatements: true
 });
-let connectPromise = connect();
 let pingInterval: NodeJS.Timer;
+let connectPromise = connect();
 
 export function reconnect() {
   dbPromise = mysql.createConnection({
