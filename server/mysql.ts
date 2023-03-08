@@ -12,6 +12,7 @@ let dbPromise = mysql.createConnection({
   multipleStatements: true
 });
 let connectPromise = connect();
+let pingInterval: NodeJS.Timer;
 
 export function reconnect() {
   dbPromise = mysql.createConnection({
@@ -41,8 +42,12 @@ async function ensureTable(name: string, defs: string[]) {
 }
 
 export async function connect() {
+  clearInterval(pingInterval);
   db = await dbPromise;
   await ensureAndUseDatabase();
+  pingInterval = setInterval(() => {
+    db.query("DO 0");
+  }, 1000 * 60 * 6 * 7);
 }
 
 export async function setup() {
