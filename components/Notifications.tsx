@@ -53,14 +53,16 @@ const Notification: React.FC<{ notification: UserNotification }> = ({
 
   const LinkComponent = useMemo(
     () =>
-      router.asPath.replace(/#.*/, "") === window.location.pathname
+      router.asPath.replace(/#.*/, "") === window.location.pathname &&
+      router.pathname === "/[postType]/[postId]/[title]"
         ? "a"
         : Link,
     [router]
   );
   const href = useMemo(
     () =>
-      router.asPath.replace(/#.*/, "") === window.location.pathname
+      router.asPath.replace(/#.*/, "") === window.location.pathname &&
+      router.pathname === "/[postType]/[postId]/[title]"
         ? notification.link.replace(/.*(#.*)$/, "$1")
         : notification.link,
     [router, notification]
